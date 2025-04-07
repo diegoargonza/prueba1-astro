@@ -1,16 +1,35 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import '../styles/global.css';
+import Navigation from '../components/navigation.astro';
+import Footer from '../components/Footer.astro';
+ const pageTitle = 'Blog';
 ---
-<a href="/">Inicio</a>
-<a href="/about/">Sobre mi</a>
-<a href="/blog/">Blog</a>
-<Layout>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    
+   
+    <Navigation/>
+    <h1 class="text-2xl text-center">{pageTitle}</h1>
+    <h1>Mi sitio Astro</h1>
+    <h1>Mi blog de Astro aprendizaje</h1>
+    <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
 
-    <body class="h2">
-        <body>
-            <h1>Blog personal</h1>
-          
+    <ul>
+        <li><a href="/posts/posts-1/">Publicación1</a></li>
+        <li><a href="/posts/posts-2/">Publicación 2</a></li>
+        <li><a href="/posts/posts-3/">Publicación 3</a></li>
+    </ul>
+
+
+    <Footer/>
+
     </body>
-</Layout>
+
+</html>
+
 

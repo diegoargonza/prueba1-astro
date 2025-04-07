@@ -1,25 +1,74 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'
+import Navigation from '../components/navigation.astro';
+import Footer from '../components/Footer.astro';
+import Social from '../components/Social.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "Sobre mi";
+
+const identity = {
+    firstName: "Sarah",
+    country: "Canada",
+    occupation: "Escritor Técnico",
+    hobbies: ["fotografía", "obervación de aves", "perñarol"],
+ };
+
+
+ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Redacción de documentos"];
+
+ const happy = true;
+ const finished = false;
+ const goal = 3;
+
+ const skillColor = "navy";
+
 ---
-<a href="/">Inicio</a>
-<a href="/about/">Sobre mi</a>
-<a href="/blog/">Blog</a>
-<Layout>
-	<Welcome />
-    <body class="h2">
-        <body>
-            <h1>Mi sitio Astro</h1>
-            <h1>Sobre mi</h1>
-            <h2>... ¡y mi nuevo sitio Astro!</h2>
-          
-            <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
-          
-            <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
-          </body>
-    </body>
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+   
+    <Navigation/>
+    <h1 class="text-2xl text-center">{pageTitle}</h1>
+    <div class="p-3">
+        <h2>... ¡y mi nuevo sitio Astro!</h2>
+        <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
+        <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
+    </div>
 
+    <p class="text-xl px-2">Datos sobre mi</p>
+    <ul class="flex px-2 ">
+        <li>Me llamo {identity.firstName},  </li>
+        <li>vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+            <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+        }
+    </ul>
+
+    <p class="text-xl px-2">Mis habilidades son: </p>
+    <ul class="px-5 font-bold skill">
+        {skills.map((skill) => <li class=" mt-2 mb-3">{skill}</li>)} 
+    </ul>
+<br>
+
+
+<style define:vars={{skillColor}}>
+    .skill { 
+        color: var(--skillColor);
+    }
+</style>
+
+    {happy && <p class="px-5">¡Estoy feliz de aprender Astro!</p>}
+
+    {finished && <p>¡He terminado este tutorial!</p>}
+
+    {goal === 3 ? <p class="px-5">Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+
+
+
+    <Footer/>
+    </body>
+</html>
