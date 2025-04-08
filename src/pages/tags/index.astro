@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob('../posts/*.md');
+
+
+
+const tags = ['astro', 'bloguear', 'aprender en público', 'éxitos', 'contratiempos', 'comunidad']
+//const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+const pageTitle = "Índice de etiquetas";
+
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <ul class="m-3">
+        {tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+</BaseLayout>
