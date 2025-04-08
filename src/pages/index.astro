@@ -1,30 +1,10 @@
 ---
-import '../styles/global.css'
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Social from '../components/Social.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from "../layouts/BaseLayout.astro"
 
-
-const pageTitle = 'Inicio';
+const pageTitle = "Página de Inicio"
 ---
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
 
-	<!--<Navigation/> -->
-	<Header/>
 
-	<h1 class="text-2xl text-center">{pageTitle}</h1>
-	<Footer/>
-
-  
-    <script>
-       import "../scripts/menu.js"
-    </script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <h2>Mi subtítulo de blog</h2>
+</BaseLayout>

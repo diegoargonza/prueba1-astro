@@ -1,5 +1,7 @@
 ---
-title: Mi segunda publicación en el blog
+layout: ../../layouts/MarkdownPostLayout.astro
+
+title: Mi segunda publicación en el blog...
 author: Alumno de Astro
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:
@@ -8,6 +10,5 @@ image:
 pubDate: 2022-07-08
 tags: ["astro", "bloguear", "aprender en público", "éxitos"]
 ---
-# Mi segunda publicación en el blog
 
-Publicado el 01/04/2025
+
